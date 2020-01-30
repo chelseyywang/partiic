@@ -26,7 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
-export default class Login extends React.Component {
+export default class Signup extends React.Component {
   render() {
     return (
       <>
@@ -35,7 +35,7 @@ export default class Login extends React.Component {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-            <Text style={styles.sectionTitle}>LOGIN</Text>
+            <Text style={styles.sectionTitle}>Signup</Text>
 
         </ScrollView>
       </SafeAreaView>
@@ -45,12 +45,6 @@ export default class Login extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  partiic: {
-    fontWeight: 'bold',
-    fontSize: 30, 
-    marginTop: 30, 
-    marginLeft: 50, 
-  }, 
   scrollView: {
     backgroundColor: Colors.lighter,
   },
@@ -61,31 +55,10 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.white,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
   },
 });
 
