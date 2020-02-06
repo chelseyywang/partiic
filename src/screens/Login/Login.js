@@ -7,7 +7,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -32,8 +32,7 @@ import {
 
 import InputField from '../../components/InputField'; 
 
-
-export default class Login extends React.Component {
+export default class Login extends Component {
   render() {
     return (
       <>
@@ -50,19 +49,23 @@ export default class Login extends React.Component {
             style={styles.loginButton}>
               <Text style={styles.loginText}>Log In</Text>
             </TouchableOpacity>
+          
+          <View style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
             <Text style={styles.need}>Need an account? 
               {" "}
-              <Text
-                style={{textDecorationLine: 'underline'}}
-                onPress={() => this.props.navigation.navigate('Signup')}
-              >
-                Sign up
-              </Text>
             </Text>
-            <TouchableOpacity 
+            <TouchableOpacity ><Text
+              style={styles.signup}
+              onPress={() => this.props.navigation.navigate('Signup')}
+            >
+              Sign up
+            </Text></TouchableOpacity>
+           </View> 
+            {/* <TouchableOpacity 
             style={styles.loginButton} onPress={() => this.props.navigation.navigate('Signup')}>
               <Text style={styles.loginText}>Sign up</Text>
-            </TouchableOpacity> 
+            </TouchableOpacity> */}
+             
         </ScrollView>
       </SafeAreaView>
       </KeyboardAvoidingView>
@@ -91,6 +94,7 @@ const styles = StyleSheet.create({
     paddingTop: 1,
     paddingBottom: 5, 
     fontSize: 18, 
+    height: 18,
     backgroundColor: 'white', 
     height: 50, 
     textAlign: "center",
@@ -98,8 +102,15 @@ const styles = StyleSheet.create({
   need: {
     color: "#75F6F2", 
     fontSize: 14, 
-    textAlign: "center", 
+    // textAlign: "center", 
     paddingTop: 10
+  },
+  signup: {
+    color: "#75F6F2", 
+    fontSize: 14, 
+    // textAlign: "center", 
+    paddingTop: 10, 
+    textDecorationLine: 'underline'
   },
   partiic: {
     fontWeight: 'bold',
