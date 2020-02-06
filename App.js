@@ -39,25 +39,25 @@ const AppNavigator = createStackNavigator(
     Home: {
       screen: Home, 
       navigationOptions: {
-          header: null,
+          headerShown: false,
       },
     },
     Login: {
       screen: Login, 
       navigationOptions: {
-          header: null,
+          headerShown: false,
       },
     },
     Profile: {
       screen: Profile, 
       navigationOptions: {
-          header: null,
+          headerShown: false,
       },
     },
     Signup: {
       screen: Signup, 
       navigationOptions: {
-          header: null,
+          headerShown: false,
       },
     },
     },
@@ -66,7 +66,7 @@ const AppNavigator = createStackNavigator(
     }, 
     {
       defaultNavigationOptions: {
-      header: null, 
+      headerShown: false, 
     },
   }
 );

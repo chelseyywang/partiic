@@ -19,7 +19,7 @@ import {
     Button, 
     TouchableOpacity, 
     Linking, 
-    Picker
+    Picker, 
   } from 'react-native';
 
 import {
@@ -31,6 +31,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import InputField from '../../components/InputField'; 
+import BottomBar from '../../components/BottomBar/BottomBar'; 
+
 
 export default class Signup extends React.Component {
   render() {
@@ -43,7 +45,7 @@ export default class Signup extends React.Component {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-            <Text style={styles.sectionTitle}>PARTIIC</Text>
+            <Text style={styles.sectionTitle}>PARTIIIC</Text>
             <InputField labelText=' Username: ' />
             <InputField labelText=' Password: ' password={true}/>
             <InputField labelText=' Email: ' />
@@ -63,9 +65,11 @@ export default class Signup extends React.Component {
                 Log in
               </Text>
             </Text>
+            
         </ScrollView>
       </SafeAreaView>
       </KeyboardAvoidingView>
+      <BottomBar/>
     </>
     </>
     );
