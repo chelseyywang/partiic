@@ -18,7 +18,8 @@ import {
   KeyboardAvoidingView, 
   Button, 
   TouchableOpacity, 
-  Linking
+  Linking, 
+  TextInput
 } from 'react-native';
 
 import {
@@ -44,7 +45,7 @@ export default class Login extends React.Component {
           style={styles.scrollView}>
             <Text style={styles.sectionTitle}>PARTIIC</Text>
             <InputField labelText=' Username: ' />
-            <InputField labelText=' Password: ' />
+            <InputField labelText=' Password: ' password={true}/>
             <TouchableOpacity 
             style={styles.loginButton}>
               <Text style={styles.loginText}>Log In</Text>
@@ -58,6 +59,10 @@ export default class Login extends React.Component {
                 Sign up
               </Text>
             </Text>
+            <TouchableOpacity 
+            style={styles.loginButton} onPress={() => this.props.navigation.navigate('Signup')}>
+              <Text style={styles.loginText}>Sign up</Text>
+            </TouchableOpacity> 
         </ScrollView>
       </SafeAreaView>
       </KeyboardAvoidingView>

@@ -18,7 +18,8 @@ import {
     KeyboardAvoidingView, 
     Button, 
     TouchableOpacity, 
-    Linking
+    Linking, 
+    Picker
   } from 'react-native';
 
 import {
@@ -44,8 +45,11 @@ export default class Signup extends React.Component {
           style={styles.scrollView}>
             <Text style={styles.sectionTitle}>PARTIIC</Text>
             <InputField labelText=' Username: ' />
-            <InputField labelText=' Password: ' />
+            <InputField labelText=' Password: ' password={true}/>
             <InputField labelText=' Email: ' />
+            <Picker selectedValue="stuff" style={{ height: 60, color: 'white'}}>
+                <Picker.Item label='item' value='oh'/>
+            </Picker>
             <TouchableOpacity 
             style={styles.loginButton}>
               <Text style={styles.loginText}>Sign Up</Text>
