@@ -12,7 +12,8 @@ class InputField extends Component {
         labelTextSize, 
         inputType, 
         textColor, 
-        borderColor
+        borderColor, 
+        password
     } = this.props;
 
     const inputColor = textColor || Colors.black; 
@@ -25,6 +26,7 @@ class InputField extends Component {
         style={[{color:inputColor}, styles.inputField]}
         // secureTextEntry={inputType === 'password'}
         placeholder={labelText}
+        secureTextEntry={password}
         />
       </View>
     );
