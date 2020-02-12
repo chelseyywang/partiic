@@ -31,11 +31,14 @@ export default class Home extends Component {
           onPress={() => this.props.navigation.navigate('Signup')}
         />
         </View> */}
-        <Login />
+        {/* <Login /> */}
+        <Text style={{textAlign: "center", color: "blue", paddingTop: 300}}> welcome 2 partiic </Text>
         <View style={styles.wrapper}>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Text style={styles.button}>1</Text></TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Text style={styles.button}>2</Text></TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Text style={styles.button}>3</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Text style={styles.button}>login</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')}><Text style={styles.button}>signup</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.button}>home</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}><Text style={styles.button}>profile</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('EventDescription')}><Text style={styles.button}>event</Text></TouchableOpacity>
         </View>
         </>
       );
@@ -60,7 +63,7 @@ export default class Home extends Component {
         padding: 10
       }, 
       button: {
-          fontSize: 18,
-          color: "white"
+          fontSize: 12,
+          color: "blue"
       }
   });

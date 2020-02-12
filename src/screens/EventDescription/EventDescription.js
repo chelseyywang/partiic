@@ -20,7 +20,8 @@ import {
   Button, 
   TouchableOpacity, 
   Linking, 
-  TextInput
+  TextInput, 
+  Image
 } from 'react-native';
 
 import {
@@ -33,12 +34,9 @@ import {
 
 import InputField from '../../components/InputField'; 
 
-export default function Login({navigation}) {
+export default function EventDescription({navigation}) {
     const pressHandler = () => {
       navigation.navigate('Signup'); 
-    }
-    const gotoEvent = () => {
-      navigation.navigate('EventDescription'); 
     }
     
     // render() {
@@ -51,11 +49,12 @@ export default function Login({navigation}) {
           <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             style={styles.scrollView}>
-              <Text style={styles.sectionTitle}>PARTIIC</Text>
-              <InputField labelText=' Username: ' />
-              <InputField labelText=' Password: ' password={true}/>
-              <TouchableOpacity 
-              style={styles.loginButton} onPress={gotoEvent}>
+              <Text style={styles.sectionTitle}>WINTER FUNDRAGER</Text>
+              <Image source={require("../../pics/rhosig.png")} style={{width: 500 }}/>
+              <Text style={styles.sectionTitle}>WINTER FUNDRAGER</Text>
+
+              {/* <TouchableOpacity 
+              style={styles.loginButton}>
                 <Text style={styles.loginText}>Log In</Text>
               </TouchableOpacity>
             
@@ -69,7 +68,7 @@ export default function Login({navigation}) {
               >
                 Sign up
               </Text></TouchableOpacity>
-             </View> 
+             </View>  */}
                
           </ScrollView>
         </SafeAreaView>
@@ -130,7 +129,7 @@ const styles = StyleSheet.create({
   avoidView: {
     paddingLeft: 30,
     paddingRight: 30,
-    paddingTop: 300,
+    paddingTop: 60,
     flex:1, 
     backgroundColor: "#050A39"
    },
@@ -188,7 +187,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: "white",
-    textAlign: "center"
+    textAlign: "center", 
+    padding: 30
   },
   sectionDescription: {
     marginTop: 8,

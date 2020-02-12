@@ -27,12 +27,16 @@ import {
 import 'react-native-gesture-handler';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { enableScreens } from 'react-native-screens';
+
+// import { Router, Scene } from 'react-native-router-flux';
+
+// import { enableScreens } from 'react-native-screens';
 // screens
 import Home from './src/screens/Home/Home'; 
 import Login from './src/screens/Login/Login'; 
 import Profile from './src/screens/Profile/Profile'; 
 import Signup from './src/screens/Signup/Signup'; 
+import EventDescription from './src/screens/EventDescription/EventDescription'; 
 
 const AppNavigator = createStackNavigator(
   {
@@ -60,15 +64,21 @@ const AppNavigator = createStackNavigator(
           headerShown: false,
       },
     },
+    EventDescription: {
+      screen: EventDescription, 
+      navigationOptions: {
+          headerShown: false,
+      },
     },
-    {
-      initialRouteName: 'Home',
-    }, 
-    {
-      defaultNavigationOptions: {
-      headerShown: false, 
     },
-  }
+  //   {
+  //     initialRouteName: 'Home',
+  //   }, 
+  //   {
+  //     defaultNavigationOptions: {
+  //     headerShown: false, 
+  //   },
+  // }
 );
 
 export default createAppContainer(AppNavigator);

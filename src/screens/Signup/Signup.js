@@ -33,48 +33,97 @@ import {
 import InputField from '../../components/InputField'; 
 import BottomBar from '../../components/BottomBar/BottomBar'; 
 
+export default function Signup ({navigation}) {
+    const pressHandler = () => {
+        navigation.navigate('Login'); 
+      }
+    // render() {
+      return (
+        <>
+        <>
+        <KeyboardAvoidingView style={styles.avoidView} behavior="padding">
+        {/* <StatusBar barStyle="dark-content" /> */}
+        <SafeAreaView>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={styles.scrollView}>
+              <Text style={styles.sectionTitle}>PARTIIIC</Text>
+              <InputField labelText=' Username: ' />
+              <InputField labelText=' Password: ' password={true}/>
+              <InputField labelText=' Email: ' />
+              {/* <Picker selectedValue="stuff" style={{ height: 60, color: 'white'}}>
+                  <Picker.Item label='item' value='oh'/>
+              </Picker> */}
+              <TouchableOpacity 
+              style={styles.loginButton}>
+                <Text style={styles.loginText}>Sign Up</Text>
+              </TouchableOpacity>
 
-export default class Signup extends React.Component {
-  render() {
-    return (
-      <>
-      <>
-      <KeyboardAvoidingView style={styles.avoidView} behavior="padding">
-      {/* <StatusBar barStyle="dark-content" /> */}
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-            <Text style={styles.sectionTitle}>PARTIIIC</Text>
-            <InputField labelText=' Username: ' />
-            <InputField labelText=' Password: ' password={true}/>
-            <InputField labelText=' Email: ' />
-            <Picker selectedValue="stuff" style={{ height: 60, color: 'white'}}>
-                <Picker.Item label='item' value='oh'/>
-            </Picker>
-            <TouchableOpacity 
-            style={styles.loginButton}>
-              <Text style={styles.loginText}>Sign Up</Text>
-            </TouchableOpacity>
-            <Text style={styles.need}>Already have an account? 
-              {" "}
-              <Text
-                style={{textDecorationLine: 'underline'}}
-                onPress={() => this.props.navigation.navigate('Login')}
-              >
-                Log in
+
+              {/* <Text style={{display: flex, flexDirection: "row"}}> */}
+              <Text style={styles.need} >Already have an account? 
+                {" "}
               </Text>
-            </Text>
-            
-        </ScrollView>
-      </SafeAreaView>
-      </KeyboardAvoidingView>
-      <BottomBar/>
-    </>
-    </>
-    );
+              <TouchableOpacity 
+            //   style={styles.loginButton}
+              >
+                <Text onPress={pressHandler}
+                style={styles.login} 
+                >Login</Text>
+              </TouchableOpacity>
+            {/* </Text> */}
+              
+          </ScrollView>
+        </SafeAreaView>
+        </KeyboardAvoidingView>
+        {/* <BottomBar/> */}
+      </>
+      </>
+      );
+    //}
   }
-}
+
+// export default class Signup extends React.Component {
+//   render() {
+//     return (
+//       <>
+//       <>
+//       <KeyboardAvoidingView style={styles.avoidView} behavior="padding">
+//       {/* <StatusBar barStyle="dark-content" /> */}
+//       <SafeAreaView>
+//         <ScrollView
+//           contentInsetAdjustmentBehavior="automatic"
+//           style={styles.scrollView}>
+//             <Text style={styles.sectionTitle}>PARTIIIC</Text>
+//             <InputField labelText=' Username: ' />
+//             <InputField labelText=' Password: ' password={true}/>
+//             <InputField labelText=' Email: ' />
+//             {/* <Picker selectedValue="stuff" style={{ height: 60, color: 'white'}}>
+//                 <Picker.Item label='item' value='oh'/>
+//             </Picker> */}
+//             <TouchableOpacity 
+//             style={styles.loginButton}>
+//               <Text style={styles.loginText}>Sign Up</Text>
+//             </TouchableOpacity>
+//             <Text style={styles.need}>Already have an account? 
+//               {" "}
+//               {/* <Text
+//                 style={{textDecorationLine: 'underline'}}
+//                 onPress={() => this.props.navigation.navigate('Login')}
+//               >
+//                 Log in
+//               </Text> */}
+//             </Text>
+            
+//         </ScrollView>
+//       </SafeAreaView>
+//       </KeyboardAvoidingView>
+//       {/* <BottomBar/> */}
+//     </>
+//     </>
+//     );
+//   }
+// }
 
 const styles = StyleSheet.create({
     avoidView: {
@@ -90,6 +139,13 @@ const styles = StyleSheet.create({
       textAlign: "center"
       // color: "blue"
     },
+    login: {
+        color: "#75F6F2", 
+        fontSize: 14, 
+        // textAlign: "center", 
+        paddingTop: 10, 
+        textDecorationLine: 'underline'
+      },
     loginButton: {
       borderRadius: 11, 
       marginTop: 10,
